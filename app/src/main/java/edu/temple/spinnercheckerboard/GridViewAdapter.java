@@ -1,6 +1,7 @@
 package edu.temple.spinnercheckerboard;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,11 +21,13 @@ public class GridViewAdapter extends BaseAdapter {
         this.columns = columns;
         this.context = context;
 
-        gridValues = new String[colSqr];
+        Resources res = context.getResources();
 
-        for(int i=0;i<colSqr;i++){
-            gridValues[i] = ""+(i+1);
-        }
+        gridValues = res.getStringArray(R.array.grid_values);
+
+        //for(int i=0;i<colSqr;i++){
+        //    gridValues[i] = ""+(i+1);
+        //}
     }
 
     @Override
